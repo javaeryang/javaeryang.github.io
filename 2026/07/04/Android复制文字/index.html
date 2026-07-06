@@ -88,6 +88,13 @@
           </li>
         
           <li class="nav-item">
+            <a href="/tags" 
+               class="nav-link ">
+              标签
+            </a>
+          </li>
+        
+          <li class="nav-item">
             <a href="/about" 
                class="nav-link ">
               关于
@@ -159,6 +166,13 @@
         </li>
       
         <li class="mobile-nav-item">
+          <a href="/tags" 
+             class="mobile-nav-link ">
+            标签
+          </a>
+        </li>
+      
+        <li class="mobile-nav-item">
           <a href="/about" 
              class="mobile-nav-link ">
             关于
@@ -172,7 +186,9 @@
   
   <main class="main-content">
     <div class="container">
-      <div class="page-layout post-layout">
+      
+
+<div class="page-layout post-layout post-no-toc">
   <article class="post-article">
     <!-- 文章头部 -->
     <header class="post-header">
@@ -215,7 +231,7 @@
         <path d="M15.1 18H3"></path>
       </svg>
       
-      285 字
+      299 字
     </span>
   
 
@@ -242,8 +258,7 @@
 
     <!-- 文章内容 -->
     <div class="post-content markdown-body">
-      <p>public static void copyText(Context context, String text){<br>    ClipboardManager clipboardManager &#x3D; (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);<br>    ClipData clipData &#x3D; ClipData.newPlainText(“ru”, text);<br>    clipboardManager.setPrimaryClip(clipData);<br>}</p>
-
+      <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">copyText</span><span class="params">(Context context, String text)</span>&#123;</span><br><span class="line">    <span class="type">ClipboardManager</span> <span class="variable">clipboardManager</span> <span class="operator">=</span> (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);</span><br><span class="line">    <span class="type">ClipData</span> <span class="variable">clipData</span> <span class="operator">=</span> ClipData.newPlainText(<span class="string">&quot;ru&quot;</span>, text);</span><br><span class="line">    clipboardManager.setPrimaryClip(clipData);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     <!-- 标签 -->
@@ -288,15 +303,6 @@
 
   <!-- TOC 目录 -->
   
-    <aside class="post-toc">
-      <div class="toc-wrapper">
-        <h3 class="toc-title">目录</h3>
-        <div class="toc-content">
-          
-        </div>
-      </div>
-    </aside>
-  
 </div>
 
     </div>
@@ -328,14 +334,6 @@
               </svg>
             </a>
           
-          
-          
-            <a href="mailto:15297886277#163.com" aria-label="Email" title="Email">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-              </svg>
-            </a>
           
         </div>
       

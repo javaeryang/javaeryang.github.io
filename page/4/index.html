@@ -17,7 +17,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Javaer">
 <meta property="og:description" content="">
-<meta property="og:url" content="https://javaeryang.github.io/page/3/index.html">
+<meta property="og:url" content="https://javaeryang.github.io/page/4/index.html">
 <meta property="og:site_name" content="Javaer">
 
 
@@ -43,7 +43,7 @@
 
 
 <!-- 规范链接 -->
-<link rel="canonical" href="https://javaeryang.github.io/page/3/index.html">
+<link rel="canonical" href="https://javaeryang.github.io/page/4/index.html">
 
 <!-- 主题色 -->
 <meta name="theme-color" content="#2563eb" media="(prefers-color-scheme: light)">
@@ -198,7 +198,7 @@
           <div class="post-card-content">
             <!-- 标题 -->
             <h2 class="post-title">
-              <a href="/2026/07/04/Docker%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/">Docker国内镜像</a>
+              <a href="/2026/07/04/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%B8%E5%85%B3/">Mysql数据库相关</a>
             </h2>
             
             <!-- 元信息 -->
@@ -228,94 +228,7 @@
         <path d="M15.1 18H3"></path>
       </svg>
       
-      247 字
-    </span>
-  
-
-  <!-- 阅读时间 -->
-  
-    <span class="meta-item meta-readtime">
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"></circle>
-        <polyline points="12 6 12 12 16 14"></polyline>
-      </svg>
-      
-      约 1 分钟
-    </span>
-  
-
-  <!-- 标签（仅在列表页显示前几个） -->
-  
-    <span class="meta-item meta-tags">
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"></path>
-        <path d="M7 7h.01"></path>
-      </svg>
-      
-        <a href="/tags/Docker/">Docker</a>
-      
-    </span>
-  
-</div>
-
-            
-            <!-- 摘要 -->
-            <div class="post-excerpt">
-              
-                1sudo vim /etc/docker/daemon.json
-12345678&#123;  &quot;registry-mirrors&quot;: [    &quot;https://docker.1panel.live&quot;,    &quot;https://dockerproxy.com&quot;,    &quot;https://hub.rat.dev&quot;,...
-              
-            </div>
-            
-            <!-- 阅读更多 -->
-            <a href="/2026/07/04/Docker%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/" class="read-more">
-              阅读全文
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </article>
-      
-        <article class="post-card">
-          <!-- 封面图 -->
-          
-          
-          <div class="post-card-content">
-            <!-- 标题 -->
-            <h2 class="post-title">
-              <a href="/2026/07/04/Mysql%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4/">Mysql更新时间</a>
-            </h2>
-            
-            <!-- 元信息 -->
-            <div class="post-meta">
-  <!-- 发布日期 -->
-  <span class="meta-item meta-date">
-    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
-      <line x1="16" x2="16" y1="2" y2="6"></line>
-      <line x1="8" x2="8" y1="2" y2="6"></line>
-      <line x1="3" x2="21" y1="10" y2="10"></line>
-    </svg>
-    <time datetime="2026-07-04">
-      2026-07-04
-    </time>
-  </span>
-
-  <!-- 更新日期 -->
-  
-
-  <!-- 字数统计 -->
-  
-    <span class="meta-item meta-wordcount">
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M17 6.1H3"></path>
-        <path d="M21 12.1H3"></path>
-        <path d="M15.1 18H3"></path>
-      </svg>
-      
-      123 字
+      292 字
     </span>
   
 
@@ -349,14 +262,24 @@
             <!-- 摘要 -->
             <div class="post-excerpt">
               
-                1update vote.user set create_time = NOW(6) where create_time is null;
-对应的Java字段
-1private LocalDateTime createTime;  // 创建时间...
+                
+创建数据库
+
+1create database user default character set utf8mb4 collate utf8mb4_unicode_ci;
+
+删除数据库
+
+1drop database user;
+
+导出数据库
+
+1mysqldump -u 用户名 -p 数据库名 &gt; 导出的文件名
+1mysqldump -u root -p user &gt; user....
               
             </div>
             
             <!-- 阅读更多 -->
-            <a href="/2026/07/04/Mysql%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4/" class="read-more">
+            <a href="/2026/07/04/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%B8%E5%85%B3/" class="read-more">
               阅读全文
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5 12h14"></path>
@@ -373,7 +296,7 @@
           <div class="post-card-content">
             <!-- 标题 -->
             <h2 class="post-title">
-              <a href="/2026/07/04/Android%E5%A4%8D%E5%88%B6%E6%96%87%E5%AD%97/">Android复制文字</a>
+              <a href="/2026/07/04/Java%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/">Java服务器部署</a>
             </h2>
             
             <!-- 元信息 -->
@@ -403,7 +326,7 @@
         <path d="M15.1 18H3"></path>
       </svg>
       
-      299 字
+      227 字
     </span>
   
 
@@ -427,7 +350,7 @@
         <path d="M7 7h.01"></path>
       </svg>
       
-        <a href="/tags/Android/">Android</a>
+        <a href="/tags/Java/">Java</a>
       
     </span>
   
@@ -437,12 +360,103 @@
             <!-- 摘要 -->
             <div class="post-excerpt">
               
-                12345public static void copyText(Context context, String text)&#123;    ClipboardManager clipboardManager = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);    ClipData clipData...
+                后台启动Java服务端，并可以指的运行端口，以及日志路径。12nohup java -jar server-0.0.1-SNAPSHOT.jar --server.port=3003 &gt; ./3003/app.log 2&gt;&amp;1 &amp;nohup java -jar server-0.0.1-SNAPSHOT.jar --server.port=3004 &gt; ./300...
               
             </div>
             
             <!-- 阅读更多 -->
-            <a href="/2026/07/04/Android%E5%A4%8D%E5%88%B6%E6%96%87%E5%AD%97/" class="read-more">
+            <a href="/2026/07/04/Java%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/" class="read-more">
+              阅读全文
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </article>
+      
+        <article class="post-card">
+          <!-- 封面图 -->
+          
+          
+          <div class="post-card-content">
+            <!-- 标题 -->
+            <h2 class="post-title">
+              <a href="/2026/07/04/git%E7%A7%BB%E9%99%A4%E5%B7%B2%E7%BB%8F%E5%8A%A0%E5%85%A5%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%9A%84%E6%96%87%E4%BB%B6/">git移除已经加入版本控制的文件</a>
+            </h2>
+            
+            <!-- 元信息 -->
+            <div class="post-meta">
+  <!-- 发布日期 -->
+  <span class="meta-item meta-date">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+      <line x1="16" x2="16" y1="2" y2="6"></line>
+      <line x1="8" x2="8" y1="2" y2="6"></line>
+      <line x1="3" x2="21" y1="10" y2="10"></line>
+    </svg>
+    <time datetime="2026-07-04">
+      2026-07-04
+    </time>
+  </span>
+
+  <!-- 更新日期 -->
+  
+
+  <!-- 字数统计 -->
+  
+    <span class="meta-item meta-wordcount">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 6.1H3"></path>
+        <path d="M21 12.1H3"></path>
+        <path d="M15.1 18H3"></path>
+      </svg>
+      
+      93 字
+    </span>
+  
+
+  <!-- 阅读时间 -->
+  
+    <span class="meta-item meta-readtime">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polyline points="12 6 12 12 16 14"></polyline>
+      </svg>
+      
+      约 1 分钟
+    </span>
+  
+
+  <!-- 标签（仅在列表页显示前几个） -->
+  
+    <span class="meta-item meta-tags">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"></path>
+        <path d="M7 7h.01"></path>
+      </svg>
+      
+        <a href="/tags/Git/">Git</a>
+      
+    </span>
+  
+</div>
+
+            
+            <!-- 摘要 -->
+            <div class="post-excerpt">
+              
+                
+使用 git rm -r –cached “要取消版本控制的文件或文件夹”
+ 1git rm -r --cached .idea
+
+作用就是将本地的 .idea 文件夹取消版本控制。
+...
+              
+            </div>
+            
+            <!-- 阅读更多 -->
+            <a href="/2026/07/04/git%E7%A7%BB%E9%99%A4%E5%B7%B2%E7%BB%8F%E5%8A%A0%E5%85%A5%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%9A%84%E6%96%87%E4%BB%B6/" class="read-more">
               阅读全文
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5 12h14"></path>
@@ -458,7 +472,7 @@
     
   <nav class="pagination">
     
-      <a href="/page/2/" class="page-link prev">
+      <a href="/page/3/" class="page-link prev">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="m15 18-6-6 6-6"></path>
         </svg>
@@ -470,39 +484,40 @@
       
       
       
+        <a href="/" class="page-number">1</a>
+        
       
       
-        
-          <a href="/" class="page-number">1</a>
-        
       
         
           <a href="/page/2/" class="page-number">2</a>
         
       
         
-          <span class="page-number current">3</span>
+          <a href="/page/3/" class="page-number">3</a>
         
       
         
-          <a href="/page/4/" class="page-number">4</a>
+          <span class="page-number current">4</span>
         
       
         
           <a href="/page/5/" class="page-number">5</a>
         
       
-      
-      
         
-          <span class="page-ellipsis">...</span>
+          <a href="/page/6/" class="page-number">6</a>
+        
+      
+      
+      
         
         <a href="/page/7/" class="page-number">7</a>
       
     </div>
 
     
-      <a href="/page/4/" class="page-link next">
+      <a href="/page/5/" class="page-link next">
         下一页
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="m9 18 6-6-6-6"></path>

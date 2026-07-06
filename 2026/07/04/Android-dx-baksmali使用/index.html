@@ -88,6 +88,13 @@
           </li>
         
           <li class="nav-item">
+            <a href="/tags" 
+               class="nav-link ">
+              标签
+            </a>
+          </li>
+        
+          <li class="nav-item">
             <a href="/about" 
                class="nav-link ">
               关于
@@ -159,6 +166,13 @@
         </li>
       
         <li class="mobile-nav-item">
+          <a href="/tags" 
+             class="mobile-nav-link ">
+            标签
+          </a>
+        </li>
+      
+        <li class="mobile-nav-item">
           <a href="/about" 
              class="mobile-nav-link ">
             关于
@@ -172,7 +186,9 @@
   
   <main class="main-content">
     <div class="container">
-      <div class="page-layout post-layout">
+      
+
+<div class="page-layout post-layout post-no-toc">
   <article class="post-article">
     <!-- 文章头部 -->
     <header class="post-header">
@@ -200,8 +216,8 @@
         <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path>
         <path d="M21 3v5h-5"></path>
       </svg>
-      <time datetime="2026-07-04">
-        更新于 2026-07-04
+      <time datetime="2026-07-05">
+        更新于 2026-07-05
       </time>
     </span>
   
@@ -215,7 +231,7 @@
         <path d="M15.1 18H3"></path>
       </svg>
       
-      247 字
+      193 字
     </span>
   
 
@@ -244,7 +260,7 @@
     <div class="post-content markdown-body">
       <ol>
 <li>把class编译成dex <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dx --dex --output=classes.dex ./HomeActivity.class</span><br></pre></td></tr></table></figure></li>
-<li>把dex反编译成smali<br> .&#x2F;d2j-baksmali.sh ~&#x2F;Documents&#x2F;android-projects&#x2F;test&#x2F;app&#x2F;build&#x2F;intermediates&#x2F;javac&#x2F;debug&#x2F;classes&#x2F;classes.dex -f</li>
+<li>把dex反编译成smali <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./d2j-baksmali.sh ~/Documents/android-projects/test/app/build/intermediates/javac/debug/classes/classes.dex -f</span><br></pre></td></tr></table></figure></li>
 </ol>
 
     </div>
@@ -291,15 +307,6 @@
 
   <!-- TOC 目录 -->
   
-    <aside class="post-toc">
-      <div class="toc-wrapper">
-        <h3 class="toc-title">目录</h3>
-        <div class="toc-content">
-          
-        </div>
-      </div>
-    </aside>
-  
 </div>
 
     </div>
@@ -331,14 +338,6 @@
               </svg>
             </a>
           
-          
-          
-            <a href="mailto:15297886277#163.com" aria-label="Email" title="Email">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-              </svg>
-            </a>
           
         </div>
       

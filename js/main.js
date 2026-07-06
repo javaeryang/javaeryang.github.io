@@ -196,20 +196,27 @@
 
   // ===== 代码复制按钮 =====
   function initCodeCopy() {
-    const codeBlocks = document.querySelectorAll(".markdown-body pre");
+    var codeBlocks = document.querySelectorAll(".markdown-body pre");
 
     codeBlocks.forEach(function (pre) {
-      const wrapper = document.createElement("div");
+      // Skip if already has button
+      if (pre.querySelector(".code-copy-btn")) return;
+
+      var wrapper = document.createElement("div");
       wrapper.className = "code-wrapper";
       wrapper.style.position = "relative";
+      wrapper.style.overflowX = "auto";
+      wrapper.style.webkitOverflowScrolling = "touch";
 
-      const button = document.createElement("button");
+      var button = document.createElement("button");
       button.className = "code-copy-btn";
       button.innerHTML =
         '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>';
       button.title = "复制代码";
       button.style.cssText =
-        "position: absolute; top: 8px; right: 8px; padding: 6px; background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); cursor: pointer; opacity: 0; transition: opacity 0.2s; color: var(--text-secondary);";
+        "position:absolute;top:8px;right:8px;padding:6px 8px;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-sm);cursor:pointer;opacity:0;transition:opacity 0.2s,color 0.2s;color:var(--text-secondary);z-index:10;backdrop-filter:blur(4px);box-shadow:var(--shadow-sm);";
+
+      pre.style.position = "relative";
 
       pre.parentNode.insertBefore(wrapper, pre);
       wrapper.appendChild(pre);
@@ -223,9 +230,10 @@
         button.style.opacity = "0";
       });
 
-      button.addEventListener("click", function () {
-        const code = pre.querySelector("code");
-        const text = code ? code.textContent : pre.textContent;
+      button.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var code = pre.querySelector("code");
+        var text = code ? code.textContent : pre.textContent;
 
         navigator.clipboard.writeText(text).then(function () {
           button.innerHTML =
