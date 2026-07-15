@@ -216,8 +216,8 @@
         <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path>
         <path d="M21 3v5h-5"></path>
       </svg>
-      <time datetime="2026-07-04">
-        更新于 2026-07-04
+      <time datetime="2026-07-15">
+        更新于 2026-07-15
       </time>
     </span>
   
@@ -231,7 +231,7 @@
         <path d="M15.1 18H3"></path>
       </svg>
       
-      555 字
+      786 字
     </span>
   
 
@@ -243,7 +243,7 @@
         <polyline points="12 6 12 12 16 14"></polyline>
       </svg>
       
-      约 2 分钟
+      约 3 分钟
     </span>
   
 
@@ -259,23 +259,37 @@
     <!-- 文章内容 -->
     <div class="post-content markdown-body">
       <ol>
-<li>创建新仓库命令 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;# Note&quot;</span> &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m <span class="string">&quot;first commit&quot;</span></span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin git@github.com:javaeryang/Note.git</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure></li>
-<li>撤销代码<ol>
-<li>未使用git add 缓存代码<br> 使用git checkout – filepathname，注意中间有–( 不要忘记中间的 “- -” ，不写就成了切换分支了！！)</li>
+<li><p>创建新仓库命令</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;# Note&quot;</span> &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m <span class="string">&quot;first commit&quot;</span></span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin git@github.com:javaeryang/Note.git</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>撤销代码</p>
+<ol>
+<li>未使用git add 缓存代码<br> 使用<code>git checkout -- filepathname</code>，注意中间有–( 不要忘记中间的 “- -” ，不写就成了切换分支了！！)</li>
 <li>放弃所有文件修改 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout .</span><br></pre></td></tr></table></figure></li>
 <li>此命令用来放弃掉所有还没有加入到缓存区（就是 git add 命令）的修改：内容修改与整个文件删除</li>
 <li>不会删除掉刚新建的文件。因为刚新建的文件还没已有加入到 git 的管理系统中。所以对于git是未知的。自己手动删除就好了。</li>
 </ol>
 </li>
-<li>克隆子模块<ol>
+<li><p>克隆子模块</p>
+<ol>
 <li>首次全新克隆</li>
 </ol>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --recursive 仓库地址</span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>已经克隆主项目，子项目未克隆</li>
 </ol>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule update --init --recursive</span><br></pre></td></tr></table></figure></li>
-<li>操作大全<br> <img src="/img/git.png" alt="Git操作大全"></li>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule update --init --recursive</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>回到历史节点<br> 让分支回到某个历史节点</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A --- B --- C --- D --- E (HEAD)</span><br></pre></td></tr></table></figure>
+<p> 想回到 <code>B</code>，应该用：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard &lt;B的commit-id&gt;</span><br></pre></td></tr></table></figure>
+<p> 如果已经推送到远程，再同步远程：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push --force-with-lease origin dev</span><br></pre></td></tr></table></figure>
+<p> <code>--force-with-lease</code> 比 <code>--force</code> 更安全，它会在远程分支没有被别人更新的情况下才强制推送。</p>
+</li>
+<li><p>操作大全<br> <img src="/img/git.png" alt="Git操作大全"></p>
+</li>
 </ol>
 
     </div>
