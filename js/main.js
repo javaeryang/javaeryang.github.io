@@ -210,11 +210,11 @@
 
       var button = document.createElement("button");
       button.className = "code-copy-btn";
+      button.type = "button";
+      button.setAttribute("aria-label", "复制代码");
       button.innerHTML =
         '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>';
       button.title = "复制代码";
-      button.style.cssText =
-        "position:absolute;top:8px;right:8px;padding:6px 8px;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:var(--radius-sm);cursor:pointer;opacity:0;transition:opacity 0.2s,color 0.2s;color:var(--text-secondary);z-index:10;backdrop-filter:blur(4px);box-shadow:var(--shadow-sm);";
 
       pre.style.position = "relative";
 
@@ -222,29 +222,25 @@
       wrapper.appendChild(pre);
       wrapper.appendChild(button);
 
-      wrapper.addEventListener("mouseenter", function () {
-        button.style.opacity = "1";
-      });
-
-      wrapper.addEventListener("mouseleave", function () {
-        button.style.opacity = "0";
-      });
-
       button.addEventListener("click", function (e) {
         e.stopPropagation();
         var code = pre.querySelector("code");
         var text = code ? code.textContent : pre.textContent;
 
         navigator.clipboard.writeText(text).then(function () {
+          button.classList.add("copied");
           button.innerHTML =
             '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
-          button.style.color = "var(--success)";
+          button.title = "已复制";
 
           setTimeout(function () {
+            button.classList.remove("copied");
             button.innerHTML =
               '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>';
-            button.style.color = "var(--text-secondary)";
+            button.title = "复制代码";
           }, 2000);
+        }).catch(function () {
+          button.title = "复制失败";
         });
       });
     });
