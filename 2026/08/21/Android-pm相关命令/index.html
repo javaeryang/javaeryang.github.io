@@ -33,9 +33,18 @@
 <!-- 字体 -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<!-- 样式表 -->
+<!-- 样式表（顺序即层叠优先级，勿随意调换） -->
+
+<link rel="stylesheet" href="/css/variables.css">
+
+
+<link rel="stylesheet" href="/css/markdown.css">
+
 
 <link rel="stylesheet" href="/css/style.css">
+
+
+<link rel="stylesheet" href="/css/responsive.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css" />
 
@@ -84,6 +93,13 @@
             <a href="/archives" 
                class="nav-link ">
               归档
+            </a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/categories" 
+               class="nav-link ">
+              分类
             </a>
           </li>
         
@@ -166,6 +182,13 @@
         </li>
       
         <li class="mobile-nav-item">
+          <a href="/categories" 
+             class="mobile-nav-link ">
+            分类
+          </a>
+        </li>
+      
+        <li class="mobile-nav-item">
           <a href="/tags" 
              class="mobile-nav-link ">
             标签
@@ -216,8 +239,8 @@
         <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path>
         <path d="M21 3v5h-5"></path>
       </svg>
-      <time datetime="2026-08-21">
-        更新于 2026-08-21
+      <time datetime="2026-09-01">
+        更新于 2026-09-01
       </time>
     </span>
   
@@ -247,6 +270,9 @@
     </span>
   
 
+  <!-- 分类（仅在列表页显示） -->
+  
+
   <!-- 标签（仅在列表页显示前几个） -->
   
 </div>
@@ -268,6 +294,18 @@
 <p>输出:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Package com.meizu.flyme.update new state: disabled</span><br></pre></td></tr></table></figure>
     </div>
+
+    <!-- 分类 -->
+    
+      <div class="post-categories">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"></path>
+        </svg>
+        
+          <a href="/categories/Android/" class="category-link">Android</a>
+        
+      </div>
+    
 
     <!-- 标签 -->
     

@@ -33,9 +33,18 @@
 <!-- 字体 -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<!-- 样式表 -->
+<!-- 样式表（顺序即层叠优先级，勿随意调换） -->
+
+<link rel="stylesheet" href="/css/variables.css">
+
+
+<link rel="stylesheet" href="/css/markdown.css">
+
 
 <link rel="stylesheet" href="/css/style.css">
+
+
+<link rel="stylesheet" href="/css/responsive.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css" />
 
@@ -84,6 +93,13 @@
             <a href="/archives" 
                class="nav-link ">
               归档
+            </a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/categories" 
+               class="nav-link ">
+              分类
             </a>
           </li>
         
@@ -166,6 +182,13 @@
         </li>
       
         <li class="mobile-nav-item">
+          <a href="/categories" 
+             class="mobile-nav-link ">
+            分类
+          </a>
+        </li>
+      
+        <li class="mobile-nav-item">
           <a href="/tags" 
              class="mobile-nav-link ">
             标签
@@ -194,17 +217,11 @@
         <article class="post-card">
           <!-- 封面图 -->
           
-            <div class="post-cover">
-              <a href="/2026/07/04/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
-                <img src="/img/c4.jpg" alt="Docker常用命令" loading="lazy">
-              </a>
-            </div>
-          
           
           <div class="post-card-content">
             <!-- 标题 -->
             <h2 class="post-title">
-              <a href="/2026/07/04/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Docker常用命令</a>
+              <a href="/2026/07/04/Docker%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/">Docker国内镜像</a>
             </h2>
             
             <!-- 元信息 -->
@@ -234,7 +251,7 @@
         <path d="M15.1 18H3"></path>
       </svg>
       
-      364 字
+      247 字
     </span>
   
 
@@ -246,7 +263,17 @@
         <polyline points="12 6 12 12 16 14"></polyline>
       </svg>
       
-      约 2 分钟
+      约 1 分钟
+    </span>
+  
+
+  <!-- 分类（仅在列表页显示） -->
+  
+    <span class="meta-item meta-categories">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"></path>
+      </svg>
+      <a href="/categories/Docker/">Docker</a>
     </span>
   
 
@@ -268,23 +295,13 @@
             <!-- 摘要 -->
             <div class="post-excerpt">
               
-                1、 构建 Docker 镜像
-1docker compose build --no-cache
-2、 启动所有服务
-1docker compose up -d
-3、查看启动日志
-1docker compose logs -f
-
-1docker compose logs -f backend
-4、移除并停止容器
-1docker compose down
-5、查看镜像列表
-1docker image...
+                1sudo vim /etc/docker/daemon.json
+12345678&#123;  &quot;registry-mirrors&quot;: [    &quot;https://docker.1panel.live&quot;,    &quot;https://dockerproxy.com&quot;,    &quot;https://hub.rat.dev&quot;,...
               
             </div>
             
             <!-- 阅读更多 -->
-            <a href="/2026/07/04/Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="read-more">
+            <a href="/2026/07/04/Docker%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/" class="read-more">
               阅读全文
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5 12h14"></path>
@@ -301,7 +318,7 @@
           <div class="post-card-content">
             <!-- 标题 -->
             <h2 class="post-title">
-              <a href="/2026/07/04/dpkg-l-%E5%88%97%E8%A1%A8%E4%B8%AD%E7%AC%AC%E4%B8%80%E5%88%97pi/">dpkg -l 列表中第一列pi</a>
+              <a href="/2026/07/04/Mysql%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4/">Mysql更新时间</a>
             </h2>
             
             <!-- 元信息 -->
@@ -331,7 +348,7 @@
         <path d="M15.1 18H3"></path>
       </svg>
       
-      67 字
+      123 字
     </span>
   
 
@@ -347,6 +364,16 @@
     </span>
   
 
+  <!-- 分类（仅在列表页显示） -->
+  
+    <span class="meta-item meta-categories">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"></path>
+      </svg>
+      <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    </span>
+  
+
   <!-- 标签（仅在列表页显示前几个） -->
   
     <span class="meta-item meta-tags">
@@ -355,7 +382,7 @@
         <path d="M7 7h.01"></path>
       </svg>
       
-        <a href="/tags/Linux/">Linux</a>
+        <a href="/tags/Mysql/">Mysql</a>
       
     </span>
   
@@ -365,13 +392,14 @@
             <!-- 摘要 -->
             <div class="post-excerpt">
               
-                提示：若看到 pi 状态，建议执行 sudo apt purge &lt;package-name&gt; 彻底清除软件包及其配置。
-...
+                1update vote.user set create_time = NOW(6) where create_time is null;
+对应的Java字段
+1private LocalDateTime createTime;  // 创建时间...
               
             </div>
             
             <!-- 阅读更多 -->
-            <a href="/2026/07/04/dpkg-l-%E5%88%97%E8%A1%A8%E4%B8%AD%E7%AC%AC%E4%B8%80%E5%88%97pi/" class="read-more">
+            <a href="/2026/07/04/Mysql%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4/" class="read-more">
               阅读全文
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5 12h14"></path>
@@ -388,7 +416,7 @@
           <div class="post-card-content">
             <!-- 标题 -->
             <h2 class="post-title">
-              <a href="/2026/07/04/tar-gpg/">tar + gpg</a>
+              <a href="/2026/07/04/Android%E5%A4%8D%E5%88%B6%E6%96%87%E5%AD%97/">Android复制文字</a>
             </h2>
             
             <!-- 元信息 -->
@@ -418,7 +446,7 @@
         <path d="M15.1 18H3"></path>
       </svg>
       
-      158 字
+      299 字
     </span>
   
 
@@ -434,6 +462,16 @@
     </span>
   
 
+  <!-- 分类（仅在列表页显示） -->
+  
+    <span class="meta-item meta-categories">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"></path>
+      </svg>
+      <a href="/categories/Android/">Android</a>
+    </span>
+  
+
   <!-- 标签（仅在列表页显示前几个） -->
   
     <span class="meta-item meta-tags">
@@ -442,7 +480,103 @@
         <path d="M7 7h.01"></path>
       </svg>
       
-        <a href="/tags/Linux/">Linux</a>
+        <a href="/tags/Android/">Android</a>
+      
+    </span>
+  
+</div>
+
+            
+            <!-- 摘要 -->
+            <div class="post-excerpt">
+              
+                12345public static void copyText(Context context, String text)&#123;    ClipboardManager clipboardManager = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);    ClipData clipData...
+              
+            </div>
+            
+            <!-- 阅读更多 -->
+            <a href="/2026/07/04/Android%E5%A4%8D%E5%88%B6%E6%96%87%E5%AD%97/" class="read-more">
+              阅读全文
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </article>
+      
+        <article class="post-card">
+          <!-- 封面图 -->
+          
+          
+          <div class="post-card-content">
+            <!-- 标题 -->
+            <h2 class="post-title">
+              <a href="/2026/07/04/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%B8%E5%85%B3/">Mysql数据库相关</a>
+            </h2>
+            
+            <!-- 元信息 -->
+            <div class="post-meta">
+  <!-- 发布日期 -->
+  <span class="meta-item meta-date">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+      <line x1="16" x2="16" y1="2" y2="6"></line>
+      <line x1="8" x2="8" y1="2" y2="6"></line>
+      <line x1="3" x2="21" y1="10" y2="10"></line>
+    </svg>
+    <time datetime="2026-07-04">
+      2026-07-04
+    </time>
+  </span>
+
+  <!-- 更新日期 -->
+  
+
+  <!-- 字数统计 -->
+  
+    <span class="meta-item meta-wordcount">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 6.1H3"></path>
+        <path d="M21 12.1H3"></path>
+        <path d="M15.1 18H3"></path>
+      </svg>
+      
+      292 字
+    </span>
+  
+
+  <!-- 阅读时间 -->
+  
+    <span class="meta-item meta-readtime">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polyline points="12 6 12 12 16 14"></polyline>
+      </svg>
+      
+      约 1 分钟
+    </span>
+  
+
+  <!-- 分类（仅在列表页显示） -->
+  
+    <span class="meta-item meta-categories">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"></path>
+      </svg>
+      <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    </span>
+  
+
+  <!-- 标签（仅在列表页显示前几个） -->
+  
+    <span class="meta-item meta-tags">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"></path>
+        <path d="M7 7h.01"></path>
+      </svg>
+      
+        <a href="/tags/Mysql/">Mysql</a>
       
     </span>
   
@@ -453,26 +587,119 @@
             <div class="post-excerpt">
               
                 
-压缩
+创建数据库
 
-123tar -zcvf xxx.tar --exclude=./xxxDir/logs --exclude=./xxxDir/.git ./xxxDir
+1create database user default character set utf8mb4 collate utf8mb4_unicode_ci;
 
-解压缩
+删除数据库
 
-1tar -xvf xxx.tar
+1drop database user;
 
-gpg加密
+导出数据库
 
-1gpg -c xxx.tar
-
-gpg解密
-
-1gpg xxx.tar.gz.gpg...
+1mysqldump -u 用户名 -p 数据库名 &gt; 导出的文件名
+1mysqldump -u root -p user &gt; user....
               
             </div>
             
             <!-- 阅读更多 -->
-            <a href="/2026/07/04/tar-gpg/" class="read-more">
+            <a href="/2026/07/04/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%B8%E5%85%B3/" class="read-more">
+              阅读全文
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </article>
+      
+        <article class="post-card">
+          <!-- 封面图 -->
+          
+          
+          <div class="post-card-content">
+            <!-- 标题 -->
+            <h2 class="post-title">
+              <a href="/2026/07/04/Java%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/">Java服务器部署</a>
+            </h2>
+            
+            <!-- 元信息 -->
+            <div class="post-meta">
+  <!-- 发布日期 -->
+  <span class="meta-item meta-date">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+      <line x1="16" x2="16" y1="2" y2="6"></line>
+      <line x1="8" x2="8" y1="2" y2="6"></line>
+      <line x1="3" x2="21" y1="10" y2="10"></line>
+    </svg>
+    <time datetime="2026-07-04">
+      2026-07-04
+    </time>
+  </span>
+
+  <!-- 更新日期 -->
+  
+
+  <!-- 字数统计 -->
+  
+    <span class="meta-item meta-wordcount">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 6.1H3"></path>
+        <path d="M21 12.1H3"></path>
+        <path d="M15.1 18H3"></path>
+      </svg>
+      
+      227 字
+    </span>
+  
+
+  <!-- 阅读时间 -->
+  
+    <span class="meta-item meta-readtime">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polyline points="12 6 12 12 16 14"></polyline>
+      </svg>
+      
+      约 1 分钟
+    </span>
+  
+
+  <!-- 分类（仅在列表页显示） -->
+  
+    <span class="meta-item meta-categories">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"></path>
+      </svg>
+      <a href="/categories/Java/">Java</a>
+    </span>
+  
+
+  <!-- 标签（仅在列表页显示前几个） -->
+  
+    <span class="meta-item meta-tags">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"></path>
+        <path d="M7 7h.01"></path>
+      </svg>
+      
+        <a href="/tags/Java/">Java</a>
+      
+    </span>
+  
+</div>
+
+            
+            <!-- 摘要 -->
+            <div class="post-excerpt">
+              
+                后台启动Java服务端，并可以指的运行端口，以及日志路径。12nohup java -jar server-0.0.1-SNAPSHOT.jar --server.port=3003 &gt; ./3003/app.log 2&gt;&amp;1 &amp;nohup java -jar server-0.0.1-SNAPSHOT.jar --server.port=3004 &gt; ./300...
+              
+            </div>
+            
+            <!-- 阅读更多 -->
+            <a href="/2026/07/04/Java%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/" class="read-more">
               阅读全文
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5 12h14"></path>
@@ -527,11 +754,6 @@ gpg解密
       
       
       
-        
-          <span class="page-ellipsis">...</span>
-        
-        <a href="/page/10/" class="page-number">10</a>
-      
     </div>
 
     
@@ -569,10 +791,10 @@ gpg解密
         <span class="stat-count">10</span>
         <span class="stat-label">标签</span>
       </div>
-      <div class="stat-item">
-        <span class="stat-count">0</span>
+      <a class="stat-item" href="/categories/">
+        <span class="stat-count">9</span>
         <span class="stat-label">分类</span>
-      </div>
+      </a>
     </div>
 
     <a class="author-about" href="/about">
@@ -623,6 +845,83 @@ gpg解密
         
       </ul>
     </div>
+  
+
+  <!-- 分类 -->
+  
+    
+    
+      <div class="sidebar-widget categories-widget">
+        <h3 class="widget-title">分类</h3>
+        <ul class="sidebar-categories">
+          
+            <li class="sidebar-category-item">
+              <a href="/categories/Linux/">
+                <span class="sidebar-category-name">Linux</span>
+                <span class="sidebar-category-count">8</span>
+              </a>
+            </li>
+          
+            <li class="sidebar-category-item">
+              <a href="/categories/Android/">
+                <span class="sidebar-category-name">Android</span>
+                <span class="sidebar-category-count">6</span>
+              </a>
+            </li>
+          
+            <li class="sidebar-category-item">
+              <a href="/categories/Docker/">
+                <span class="sidebar-category-name">Docker</span>
+                <span class="sidebar-category-count">3</span>
+              </a>
+            </li>
+          
+            <li class="sidebar-category-item">
+              <a href="/categories/Git/">
+                <span class="sidebar-category-name">Git</span>
+                <span class="sidebar-category-count">3</span>
+              </a>
+            </li>
+          
+            <li class="sidebar-category-item">
+              <a href="/categories/%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/">
+                <span class="sidebar-category-name">逆向分析</span>
+                <span class="sidebar-category-count">2</span>
+              </a>
+            </li>
+          
+            <li class="sidebar-category-item">
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                <span class="sidebar-category-name">数据库</span>
+                <span class="sidebar-category-count">2</span>
+              </a>
+            </li>
+          
+            <li class="sidebar-category-item">
+              <a href="/categories/%E9%9A%8F%E7%AC%94/">
+                <span class="sidebar-category-name">随笔</span>
+                <span class="sidebar-category-count">2</span>
+              </a>
+            </li>
+          
+            <li class="sidebar-category-item">
+              <a href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">
+                <span class="sidebar-category-name">未分类</span>
+                <span class="sidebar-category-count">1</span>
+              </a>
+            </li>
+          
+            <li class="sidebar-category-item">
+              <a href="/categories/Java/">
+                <span class="sidebar-category-name">Java</span>
+                <span class="sidebar-category-count">1</span>
+              </a>
+            </li>
+          
+          
+        </ul>
+      </div>
+    
   
 
   <!-- 标签云 -->

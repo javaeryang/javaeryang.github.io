@@ -33,9 +33,18 @@
 <!-- 字体 -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<!-- 样式表 -->
+<!-- 样式表（顺序即层叠优先级，勿随意调换） -->
+
+<link rel="stylesheet" href="/css/variables.css">
+
+
+<link rel="stylesheet" href="/css/markdown.css">
+
 
 <link rel="stylesheet" href="/css/style.css">
+
+
+<link rel="stylesheet" href="/css/responsive.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css" />
 
@@ -84,6 +93,13 @@
             <a href="/archives" 
                class="nav-link ">
               归档
+            </a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/categories" 
+               class="nav-link ">
+              分类
             </a>
           </li>
         
@@ -166,6 +182,13 @@
         </li>
       
         <li class="mobile-nav-item">
+          <a href="/categories" 
+             class="mobile-nav-link ">
+            分类
+          </a>
+        </li>
+      
+        <li class="mobile-nav-item">
           <a href="/tags" 
              class="mobile-nav-link ">
             标签
@@ -216,8 +239,8 @@
         <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path>
         <path d="M21 3v5h-5"></path>
       </svg>
-      <time datetime="2026-07-08">
-        更新于 2026-07-08
+      <time datetime="2026-09-01">
+        更新于 2026-09-01
       </time>
     </span>
   
@@ -247,6 +270,9 @@
     </span>
   
 
+  <!-- 分类（仅在列表页显示） -->
+  
+
   <!-- 标签（仅在列表页显示前几个） -->
   
 </div>
@@ -262,12 +288,12 @@
      data-hbe-format="4"
      data-wpm="抱歉, 这个密码看着不太对, 请再试试."
      data-whm="抱歉, 这个密码看着不太对, 请再试试."
-     data-salt="5f65fea0302615b44f713fb54326a4bc331204ea265a611d5bcb200872cc55e3"
-     data-nonce="c4aa4ac16bbb2e6188b14fa4"
+     data-salt="a6cc115507752e47bfd81dd993a79c8417fd3549577d0e37fbc24fc6e27f448f"
+     data-nonce="8b4ba4f1fb289894eb6aec74"
      data-kdf-iterations="600000"
      data-auto-save="false">
   <script id="hbeData" type="hbeData">
-    0cd58f4a659c249cfe835bc845a5d56a417cce569f336fb0662e61b93d8bc9bc85b4710aeb886d0f9c44458a5c7ebcae498768ebb9cb4edc03e5329cd85644483d08a121aa34069bc84039cd9ffb64a1e00bd02b0788250bbf382b4a56a95baa019b0ff2a58abebc618014d640fa7ef67f972574841d7cd61031f27b87a931b12dacb4b238c01d47dc36e2832ffa4e13cf5a96501661ee182fbcb57856e4b541bddb5671b8d19d0388e50d13eb
+    cf623148a5c5dfae888b8efe7366b21550bff86c61ea8467b550cdc09f359cc5d25e3a96887207e25f0bad6fb44bece326461497e6948befbabf1f1c655a9212e8552f2022e7400ee0dd269a9f2f010a38752deb3550d2e5697c94417401cf2b43414304798f1f8e71458da06d9bd634e1b98acc639b7c8ff5a944176f5d7174c8879081ea9d7405c7d480bbb10206f5b164fdf1be44b0b7f62190e635407d852fac7ff0469d5b9d0340848b6b
   </script>
   <div class="hbe hbe-content">
     <form id="hbeForm" class="hbe hbe-form" onsubmit="return false">
@@ -284,6 +310,18 @@
 </div>
 <script data-pjax src="/lib/hbe.9e70f1e1d2.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
     </div>
+
+    <!-- 分类 -->
+    
+      <div class="post-categories">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"></path>
+        </svg>
+        
+          <a href="/categories/%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/" class="category-link">逆向分析</a>
+        
+      </div>
+    
 
     <!-- 标签 -->
     

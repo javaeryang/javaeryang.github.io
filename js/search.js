@@ -146,6 +146,17 @@
           matchedKeywords.push(keyword);
         }
 
+        // 分类匹配
+        if (
+          item.categories &&
+          item.categories.some(function (cat) {
+            return cat.toLowerCase().includes(keyword);
+          })
+        ) {
+          score += 7;
+          matchedKeywords.push(keyword);
+        }
+
         // 标签匹配
         if (
           item.tags &&
@@ -208,20 +219,28 @@
             excerpt = excerpt.replace(regex, "<mark>$1</mark>");
           });
 
-          // 标签
-          let tagsHtml = "";
+          // 分类与标签
+          let taxonomyHtml = "";
+          const chips = [];
+          if (item.categories && item.categories.length) {
+            item.categories.slice(0, 2).forEach(function (cat) {
+              chips.push(
+                  '<span class="search-tag search-category">' +
+                  escapeHtml(cat) +
+                  "</span>"
+              );
+            });
+          }
           if (item.tags && item.tags.length) {
-            tagsHtml =
-                '<div class="search-result-tags">' +
-                item.tags
-                    .slice(0, 3)
-                    .map(function (tag) {
-                      return (
-                          '<span class="search-tag">' + escapeHtml(tag) + "</span>"
-                      );
-                    })
-                    .join("") +
-                "</div>";
+            item.tags.slice(0, 3).forEach(function (tag) {
+              chips.push(
+                  '<span class="search-tag">' + escapeHtml(tag) + "</span>"
+              );
+            });
+          }
+          if (chips.length) {
+            taxonomyHtml =
+                '<div class="search-result-tags">' + chips.join("") + "</div>";
           }
 
           const root = getSiteRoot();
@@ -236,7 +255,7 @@
               (excerpt
                   ? '<div class="search-result-excerpt">' + excerpt + "...</div>"
                   : "") +
-              tagsHtml +
+              taxonomyHtml +
               (item.date
                   ? '<div class="search-result-date">' + item.date + "</div>"
                   : "") +

@@ -33,9 +33,18 @@
 <!-- 字体 -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<!-- 样式表 -->
+<!-- 样式表（顺序即层叠优先级，勿随意调换） -->
+
+<link rel="stylesheet" href="/css/variables.css">
+
+
+<link rel="stylesheet" href="/css/markdown.css">
+
 
 <link rel="stylesheet" href="/css/style.css">
+
+
+<link rel="stylesheet" href="/css/responsive.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css" />
 
@@ -84,6 +93,13 @@
             <a href="/archives" 
                class="nav-link ">
               归档
+            </a>
+          </li>
+        
+          <li class="nav-item">
+            <a href="/categories" 
+               class="nav-link ">
+              分类
             </a>
           </li>
         
@@ -162,6 +178,13 @@
           <a href="/archives" 
              class="mobile-nav-link ">
             归档
+          </a>
+        </li>
+      
+        <li class="mobile-nav-item">
+          <a href="/categories" 
+             class="mobile-nav-link ">
+            分类
           </a>
         </li>
       

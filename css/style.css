@@ -456,6 +456,10 @@ button {
   color: var(--primary-color);
 }
 
+.meta-sep {
+  color: var(--text-muted);
+}
+
 /* 文章摘要 */
 .post-excerpt {
   margin-bottom: var(--spacing-md);
@@ -503,6 +507,37 @@ button {
   border-radius: var(--radius-lg);
 }
 
+/* 文章分类 */
+.post-categories {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+}
+
+.post-categories svg {
+  flex-shrink: 0;
+}
+
+.category-link {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.category-link:hover {
+  color: var(--primary-color);
+  background-color: var(--primary-light);
+}
+
 /* 文章标签 */
 .post-tags {
   display: flex;
@@ -513,6 +548,13 @@ button {
   padding-top: var(--spacing-lg);
   border-top: 1px solid var(--border-color);
   color: var(--text-muted);
+}
+
+/* 分类与标签相邻时合并为一组，避免出现两条分隔线 */
+.post-categories + .post-tags {
+  margin-top: var(--spacing-sm);
+  padding-top: 0;
+  border-top: none;
 }
 
 .post-tags svg {
@@ -754,6 +796,14 @@ button {
   text-align: center;
 }
 
+a.stat-item .stat-label {
+  transition: color var(--transition-fast);
+}
+
+a.stat-item:hover .stat-label {
+  color: var(--primary-color);
+}
+
 .stat-count {
   display: block;
   font-size: var(--text-xl);
@@ -802,6 +852,50 @@ button {
 
 .recent-post-date {
   flex-shrink: 0;
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+/* 侧边栏分类 */
+.sidebar-categories {
+  list-style: none;
+}
+
+.sidebar-category-item {
+  padding: var(--spacing-xs) 0;
+}
+
+.sidebar-category-item a {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.sidebar-category-item a:hover {
+  color: var(--primary-color);
+}
+
+.sidebar-category-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar-category-count {
+  flex-shrink: 0;
+  min-width: 1.5rem;
+  padding: 0 var(--spacing-xs);
+  font-size: var(--text-xs);
+  text-align: center;
+  color: var(--text-muted);
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+}
+
+.sidebar-category-more a {
   font-size: var(--text-xs);
   color: var(--text-muted);
 }
@@ -973,6 +1067,146 @@ button {
 }
 
 .tag-cloud-item .tag-count {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+/* ===== 分类总览页 ===== */
+.categories-wrapper {
+  /* .page-layout 是 grid，配合 margin: 0 auto 会让子项收缩到 max-content，
+     所以要显式 width: 100% 才能撑到 --content-max（和标签页保持一致） */
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: var(--spacing-xl) 0;
+}
+
+.categories-header {
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+.categories-title {
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--text-3xl);
+}
+
+.categories-count {
+  color: var(--text-muted);
+}
+
+.categories-empty {
+  padding: var(--spacing-xl);
+  text-align: center;
+  color: var(--text-muted);
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+}
+
+.categories-tree {
+  list-style: none;
+  padding: var(--spacing-sm) 0;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+}
+
+.category-node {
+  padding-left: calc(var(--depth, 0) * var(--spacing-lg));
+}
+
+.category-node-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.category-node-link:hover {
+  color: var(--primary-color);
+  background-color: var(--primary-light);
+}
+
+.category-node-link svg {
+  flex-shrink: 0;
+  color: var(--text-muted);
+}
+
+.category-node-link:hover svg {
+  color: var(--primary-color);
+}
+
+.category-node-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.category-node-count {
+  flex-shrink: 0;
+  min-width: 1.5rem;
+  padding: 0 var(--spacing-xs);
+  font-size: var(--text-xs);
+  text-align: center;
+  color: var(--text-muted);
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+}
+
+/* ===== 单个分类归档页 ===== */
+.category-crumbs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.category-crumb-sep {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+a.category-crumb {
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+a.category-crumb:hover {
+  color: var(--primary-color);
+}
+
+.category-subs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+.category-sub-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-fast);
+}
+
+.category-sub-item:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  background-color: var(--primary-light);
+}
+
+.category-sub-count {
   font-size: var(--text-xs);
   color: var(--text-muted);
 }
@@ -1435,6 +1669,11 @@ a.tree-label:hover {
   border-radius: var(--radius-full);
 }
 
+.search-tag.search-category {
+  color: var(--text-secondary);
+  background-color: var(--bg-tertiary);
+}
+
 .search-result-date {
   font-size: var(--text-xs);
   color: var(--text-muted);
@@ -1662,7 +1901,9 @@ a.tree-label:hover {
 
 .markdown-body p {
   margin-top: 0;
-  /* margin-bottom: var(--spacing-md); */
+  /* 47ad7e0 有意去掉段间距；必须显式写 0，否则 markdown.css 的
+     margin-bottom: var(--spacing-md) 会漏过来生效 */
+  margin-bottom: 0;
 }
 
 .markdown-body a {
@@ -1852,6 +2093,9 @@ a.tree-label:hover {
 
 .markdown-body figure.highlight .code {
   width: 100%;
+  /* markdown.css 给 .code 加了 padding，而它比本文件的
+     `figure.highlight td { padding: 0 }` 特异性更高，会导致代码块双重内边距 */
+  padding: 0;
 }
 
 .markdown-body figure.highlight .code pre {
@@ -1963,6 +2207,19 @@ a.tree-label:hover {
   .pagination {
     flex-direction: column;
     gap: var(--spacing-sm);
+  }
+
+  /* 分类页：窄屏收窄层级缩进，避免深层分类挤压名称 */
+  .categories-wrapper {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .category-node {
+    padding-left: calc(var(--depth, 0) * var(--spacing-sm));
+  }
+
+  .category-node-link {
+    padding: var(--spacing-sm) var(--spacing-md);
   }
 }
 
