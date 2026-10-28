@@ -254,7 +254,7 @@
         <path d="M15.1 18H3"></path>
       </svg>
       
-      5.0k 字
+      5.2k 字
     </span>
   
 
@@ -266,7 +266,7 @@
         <polyline points="12 6 12 12 16 14"></polyline>
       </svg>
       
-      约 17 分钟
+      约 18 分钟
     </span>
   
 
@@ -284,7 +284,13 @@
 
     <!-- 文章内容 -->
     <div class="post-content markdown-body">
-      <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">adb shell cmd package resolve-activity --brief \</span><br><span class="line">  --user 11 \</span><br><span class="line">  -a android.intent.action.MAIN \</span><br><span class="line">  -c android.intent.category.LAUNCHER \</span><br><span class="line">  com.tencent.mm</span><br><span class="line">priority=0 preferredOrder=0 match=0x108000 specificIndex=-1 isDefault=<span class="literal">false</span></span><br><span class="line">com.tencent.mm/.ui.LauncherUI</span><br></pre></td></tr></table></figure>
+      <p>魅族</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Documents/phone/meizu$ ./clone_wechat.sh create wxclone8</span><br></pre></td></tr></table></figure>
+<p>小米</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell <span class="string">&quot;su -c &#x27;sh /data/local/tmp/make_wechat_user.sh wxclone6&#x27;&quot;</span></span><br><span class="line"><span class="comment"># 看进度: adb shell &quot;su -c &#x27;tail -f /data/local/tmp/make_wechat_user.log&#x27;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">adb shell cmd package resolve-activity --brief \</span><br><span class="line">  --user 11 \</span><br><span class="line">  -a android.intent.action.MAIN \</span><br><span class="line">  -c android.intent.category.LAUNCHER \</span><br><span class="line">  com.tencent.mm</span><br><span class="line">priority=0 preferredOrder=0 match=0x108000 specificIndex=-1 isDefault=<span class="literal">false</span></span><br><span class="line">com.tencent.mm/.ui.LauncherUI</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">adb shell pm list packages --user 11 | grep -E <span class="string">&#x27;com.tencent.mm|org.lsposed.manager&#x27;</span></span><br><span class="line">package:com.tencent.mm</span><br><span class="line">(base) javaer@javaer:~$ </span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">adb shell am switch-user 11</span><br><span class="line">adb shell am start --user 11 \</span><br><span class="line">  -n com.tencent.mm/.ui.LauncherUI</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys package com.tencent.mm \</span><br><span class="line">  | grep -E <span class="string">&#x27;User 11:|installed=|hidden=|suspended=|enabled=&#x27;</span></span><br><span class="line">    User 0: ceDataInode=4194317 installed=<span class="literal">true</span> hidden=<span class="literal">false</span> suspended=<span class="literal">false</span> stopped=<span class="literal">false</span> notLaunched=<span class="literal">false</span> enabled=0 instant=<span class="literal">false</span> virtual=<span class="literal">false</span></span><br><span class="line">    User 10: ceDataInode=4065561 installed=<span class="literal">true</span> hidden=<span class="literal">false</span> suspended=<span class="literal">false</span> stopped=<span class="literal">true</span> notLaunched=<span class="literal">false</span> enabled=0 instant=<span class="literal">false</span> virtual=<span class="literal">false</span></span><br><span class="line">    User 11: ceDataInode=4201682 installed=<span class="literal">true</span> hidden=<span class="literal">false</span> suspended=<span class="literal">false</span> stopped=<span class="literal">false</span> notLaunched=<span class="literal">false</span> enabled=0 instant=<span class="literal">false</span> virtual=<span class="literal">false</span></span><br><span class="line">    User 999: ceDataInode=3407906 installed=<span class="literal">true</span> hidden=<span class="literal">false</span> suspended=<span class="literal">false</span> stopped=<span class="literal">false</span> notLaunched=<span class="literal">false</span> enabled=0 instant=<span class="literal">false</span> virtual=<span class="literal">false</span></span><br><span class="line">  User 11:</span><br></pre></td></tr></table></figure>
