@@ -211,7 +211,7 @@
     <div class="container">
       
 
-<div class="page-layout post-layout post-no-toc">
+<div class="page-layout post-layout">
   <article class="post-article">
     <!-- 文章头部 -->
     <header class="post-header">
@@ -239,8 +239,8 @@
         <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path>
         <path d="M21 3v5h-5"></path>
       </svg>
-      <time datetime="2026-10-29">
-        更新于 2026-10-29
+      <time datetime="2026-10-31">
+        更新于 2026-10-31
       </time>
     </span>
   
@@ -254,7 +254,7 @@
         <path d="M15.1 18H3"></path>
       </svg>
       
-      5.2k 字
+      5.6k 字
     </span>
   
 
@@ -266,7 +266,7 @@
         <polyline points="12 6 12 12 16 14"></polyline>
       </svg>
       
-      约 18 分钟
+      约 19 分钟
     </span>
   
 
@@ -288,6 +288,22 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Documents/phone/meizu$ ./clone_wechat.sh create wxclone8</span><br></pre></td></tr></table></figure>
 <p>小米</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell <span class="string">&quot;su -c &#x27;sh /data/local/tmp/make_wechat_user.sh wxclone6&#x27;&quot;</span></span><br><span class="line"><span class="comment"># 看进度: adb shell &quot;su -c &#x27;tail -f /data/local/tmp/make_wechat_user.log&#x27;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell pm list <span class="built_in">users</span></span><br></pre></td></tr></table></figure>
+<h1 id="查看最大支持用户数"><a href="#查看最大支持用户数" class="headerlink" title="查看最大支持用户数"></a>查看最大支持用户数</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell pm get-max-users</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="查看当前前台用户-ID"><a href="#查看当前前台用户-ID" class="headerlink" title="查看当前前台用户 ID"></a>查看当前前台用户 ID</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell am get-current-user</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="查看用户详细信息"><a href="#查看用户详细信息" class="headerlink" title="查看用户详细信息"></a>查看用户详细信息</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell dumpsys user</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="查看指定用户是否运行"><a href="#查看指定用户是否运行" class="headerlink" title="查看指定用户是否运行"></a>查看指定用户是否运行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell am get-started-user-state 10</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="查看指定用户安装的应用"><a href="#查看指定用户安装的应用" class="headerlink" title="查看指定用户安装的应用"></a>查看指定用户安装的应用</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell pm list packages --user 10</span><br></pre></td></tr></table></figure>
+<h1 id="如果用户正在运行，也可以先停止再删除："><a href="#如果用户正在运行，也可以先停止再删除：" class="headerlink" title="如果用户正在运行，也可以先停止再删除："></a>如果用户正在运行，也可以先停止再删除：</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell am stop-user -f 13</span><br><span class="line">adb shell pm remove-user 13</span><br></pre></td></tr></table></figure>
 
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">adb shell cmd package resolve-activity --brief \</span><br><span class="line">  --user 11 \</span><br><span class="line">  -a android.intent.action.MAIN \</span><br><span class="line">  -c android.intent.category.LAUNCHER \</span><br><span class="line">  com.tencent.mm</span><br><span class="line">priority=0 preferredOrder=0 match=0x108000 specificIndex=-1 isDefault=<span class="literal">false</span></span><br><span class="line">com.tencent.mm/.ui.LauncherUI</span><br></pre></td></tr></table></figure>
@@ -325,7 +341,10 @@
     <!-- 上一篇 / 下一篇 -->
     <nav class="post-nav">
       
-        <div class="post-nav-item prev disabled"></div>
+        <a href="/2026/11/08/WeXposed%E5%8A%9F%E8%83%BD%E5%A4%87%E4%BB%BD/" class="post-nav-item prev">
+          <span class="post-nav-label">上一篇</span>
+          <span class="post-nav-title">WeXposed功能备份</span>
+        </a>
       
       
       
@@ -338,6 +357,15 @@
   </article>
 
   <!-- TOC 目录 -->
+  
+    <aside class="post-toc">
+      <div class="toc-wrapper">
+        <h3 class="toc-title">目录</h3>
+        <div class="toc-content">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%9C%80%E5%A4%A7%E6%94%AF%E6%8C%81%E7%94%A8%E6%88%B7%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">查看最大支持用户数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E5%89%8D%E5%8F%B0%E7%94%A8%E6%88%B7-ID"><span class="toc-number">2.</span> <span class="toc-text">查看当前前台用户 ID</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%94%A8%E6%88%B7%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF"><span class="toc-number">3.</span> <span class="toc-text">查看用户详细信息</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%8C%87%E5%AE%9A%E7%94%A8%E6%88%B7%E6%98%AF%E5%90%A6%E8%BF%90%E8%A1%8C"><span class="toc-number">4.</span> <span class="toc-text">查看指定用户是否运行</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%8C%87%E5%AE%9A%E7%94%A8%E6%88%B7%E5%AE%89%E8%A3%85%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">5.</span> <span class="toc-text">查看指定用户安装的应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E7%94%A8%E6%88%B7%E6%AD%A3%E5%9C%A8%E8%BF%90%E8%A1%8C%EF%BC%8C%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%85%88%E5%81%9C%E6%AD%A2%E5%86%8D%E5%88%A0%E9%99%A4%EF%BC%9A"><span class="toc-number">6.</span> <span class="toc-text">如果用户正在运行，也可以先停止再删除：</span></a></li></ol>
+        </div>
+      </div>
+    </aside>
   
 </div>
 
